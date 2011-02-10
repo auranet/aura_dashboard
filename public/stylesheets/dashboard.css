@@ -1,0 +1,164 @@
+/**
+ This file lives in the aura-dashboard plugin and will be overwritten
+ at server startup.
+ */
+
+/**
+ * @file
+ *    CSS for the jQuery.dashboard() plugin.
+ *
+ * Released under the GNU General Public License.  See LICENSE.txt.
+ */
+
+.column {
+  float: left;
+  clear: none;
+  width: 33.3%;
+  margin: 0;
+  /* padding-bottom and min-height make sure that there is always a sizable drop zone. */
+  min-height: 400px;
+  padding: 0 0 250px;
+  list-style-type: none;
+}
+  /* The placeholder that indicates where a dragged widget will land if dropped now. */
+  .placeholder {
+    margin: 5px;
+    border: 3px dashed pink;
+  }
+  /* Spacing between widgets. */
+  li.widget, li.empty-placeholder { margin: 6px 3px; background: #fff; }
+  li.widget { border: 1px solid black; }
+    /* Spacing inside widgets. */
+    .widget-wrapper { padding: 5px; }
+      .widget-header {
+        /* Make sure the mouse cursor reflects the behaviour on hover. */
+        cursor: move;
+        font-weight: bold;
+        background: #eef;
+      }
+      /* Standards-browsers do this anyway because all inner block elements are floated.  IE doesn't because it's crap. */
+      .widget-controls { display: inline; }
+        .widget-icon, .full-screen-close-icon img {
+          display: block;
+          float: right;
+          margin-left: 2px;
+          /* Although these are <a> links, they don't have href="" attributes. */
+          cursor: pointer;
+        }
+
+#full-screen-header {
+  display: block;
+  padding: .2em .4em;
+  border: 1px solid black;
+  background: #eee;
+  /* Although this is an <a> link, it doesn't have an href="" attribute. */
+  cursor: pointer;
+}
+
+/* Make the throbber in-yer-face. */
+.throbber {
+  padding: 50px;
+  text-align: center;
+  background: #eee;
+}
+
+.dashboard {
+  width: 100%;
+}
+
+.tb {
+  font-family: monospace;
+  font-size: 12px;
+  height: 600px;
+  overflow: scroll;
+}
+
+.widget-settings {
+  display: none;
+}
+
+.subform_collection {
+  border: 1px solid #888;
+  padding: 5px;
+  margin: 5px;
+}
+
+.subform_collection .subform {
+  border: 1px dotted #888;
+  padding: 5px;
+  margin: 5px;
+}
+
+.subform_collection h4 {
+  margin: 2px;
+}
+
+/* Config form customizations */
+.ui-widget {
+	font-family: Verdana, Arial, sans-serif;
+	font-size: .9em;
+}
+.ui-widget label {
+	display: block;
+	float: left;
+	vertical-align: top;
+	margin-right: 10px;
+	text-align: right;
+	width: 100px;
+	font-weight: bold;
+	font-size: .8em;
+	clear: left;
+}
+.ui-widget .ui-widget {
+	font-size: .8em;
+}
+.ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button {
+	font-family: Verdana, Arial, sans-serif;
+	font-size: .8em;
+	margin-top: -2px;
+}
+.ui-widget .subform label, .ui-widget .subform select {
+	float: left;
+	clear: none;
+	width: auto;
+	/*display: inline;*/
+	font-size: .75em;
+}
+.ui-widget .subform select {
+	font-size: .6em;
+}
+.ui-widget .subform div {
+	float: left;
+	height: 1.5em;
+	width: 50%;
+	vertical-align: middle;
+	margin-top: -5px;
+}
+.subform_collection .subform {
+	border-style: none;
+	margin-bottom: 20px;
+}
+.ui-widget select[multiple] {
+	height: 11.85em;
+}
+.ui-accordion .ui-accordion-header a {
+	display: block; font-size: .8em; padding: .5em .5em .5em .7em;
+}
+.ui-slider .ui-slider-range {
+	position: absolute;
+	z-index: 1;
+	font-size: .6em;
+	display: block;
+	border: 0;
+	background-position: 0 0;
+}
+.ui-datepicker .ui-datepicker-title select {
+	font-size:.8em;
+	margin:1px 0;
+}
+.ui-datepicker table {
+	width: 100%;
+	font-size: .8em;
+	border-collapse: collapse;
+	margin:0 0 .4em;
+}

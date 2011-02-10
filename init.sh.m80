@@ -1,0 +1,22 @@
+<: # -*-sh-*-
+use Helpers::shellHelpers; # $m80path = [{command => "embedperl"}, {command => "m4", chmod => "+x" }];
+print Helpers::shellHelpers::shellScript ( r => [],
+                                           getopts => ''); 
+:>
+
+printmsg current working directory is $(pwd)
+
+
+
+docmd mkdir -pv public/javascripts/aura-dashboard/
+docmd cp -Rv vendor/plugins/aura_dashboard/public/javascripts/* public/javascripts/aura-dashboard/
+
+docmd mkdir -pv public/stylesheets/aura-dashboard/
+docmd cp -Rv vendor/plugins/aura_dashboard/public/stylesheets/* public/stylesheets/aura-dashboard/
+
+docmd mkdir -pv db/migrate
+docmd cp -Rv vendor/plugins/aura_dashboard/db/migrate/*.rb db/migrate/
+
+cleanup 0
+
+    

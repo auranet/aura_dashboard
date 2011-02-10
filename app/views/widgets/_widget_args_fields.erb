@@ -1,0 +1,10 @@
+<div class="widget_args_fields">
+  <% @form.field_list.each do |path| %>
+  <% field = @form.fields[path] %>
+    <% if field.available? %>
+      <div>
+        <%= field.to_html %>
+      </div>
+    <% end %>
+  <% end %>
+</div>

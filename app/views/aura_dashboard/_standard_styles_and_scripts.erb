@@ -1,0 +1,12 @@
+<%= stylesheet_link_tag options[:jquery_ui_stylesheet], options[:dashboard_stylesheet], :cache => true %>
+<%= javascript_include_tag options[:jquery], options[:jquery_ui], "aura-dashboard/jquery-dashboard/jquery-dashboard", :cache => true %>
+<script type="text/javascript" src="http://www.google.com/jsapi">
+</script>
+<script type="text/javascript">
+  google.load('visualization', '1', {packages: [
+    'corechart',
+    'imagechart',
+    'table'
+  ]});
+</script>
+<%= javascript_include_tag "aura-dashboard/aura-dashboard", :cache => true %>
