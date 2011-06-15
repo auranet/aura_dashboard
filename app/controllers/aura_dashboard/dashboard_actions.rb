@@ -1,7 +1,7 @@
 module AuraDashboard
-  
+
   module DashboardActions
-    
+
     def save_dashboard
       dashboard = Dashboard.find(params[:dashboard_id])
       # Initialize columns.  Columns will not be present if the last
@@ -40,7 +40,7 @@ module AuraDashboard
     def show_dashboard
       respond_to do |format|
         format.html do
-          render
+          render :layout => false
         end
         format.json do
           if dashboard = Dashboard.find(params[:dashboard_id])
@@ -60,7 +60,7 @@ module AuraDashboard
         end
       end
     end
-    
+
   end
-  
+
 end
