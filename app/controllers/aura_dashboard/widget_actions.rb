@@ -10,7 +10,14 @@ module AuraDashboard
             if params[:dashboard_widget_id]
               if dashboard_widget = DashboardWidget.find(params[:dashboard_widget_id].to_i)
                 widget = dashboard_widget.widget
-                if builder_class = widget.widget_class.constantize
+                builder_class = nil
+                if not widget.widget_class.blank?
+                  builder_class = widget.widget_class.constantize
+                else
+                  yaml = YAML.load(widget.widget_args)
+                  builder_class = yaml[:arguments][:builder].constantize
+                end
+                if builder_class
                   builder = builder_class.new(
                     :view => AuraVisualize::ViewFactory.from_yaml(widget.widget_args),
                     :id => widget.id)
